@@ -799,7 +799,7 @@ unsigned int Texture::getMaximumSize()
     {
         checked = true;
 
-        TransientContextLock lock;
+        TransientContextLock local_lock;
 
         glCheck(glGetIntegerv(GL_MAX_TEXTURE_SIZE, &size));
     }

@@ -71,7 +71,7 @@ namespace
     void setProcessDpiAware()
     {
         // Try SetProcessDpiAwareness first
-        HINSTANCE shCoreDll = LoadLibrary(L"Shcore.dll");
+        HINSTANCE shCoreDll = LoadLibrary( "Shcore.dll" );
 
         if (shCoreDll)
         {
@@ -106,7 +106,7 @@ namespace
 
         // Fall back to SetProcessDPIAware if SetProcessDpiAwareness
         // is not available on this system
-        HINSTANCE user32Dll = LoadLibrary(L"user32.dll");
+        HINSTANCE user32Dll = LoadLibrary( "user32.dll" );
 
         if (user32Dll)
         {
@@ -489,7 +489,7 @@ void WindowImplWin32::switchToFullscreen(const VideoMode& mode)
     devMode.dmFields     = DM_PELSWIDTH | DM_PELSHEIGHT | DM_BITSPERPEL;
 
     // Apply fullscreen mode
-    if (ChangeDisplaySettingsW(&devMode, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL)
+    if (ChangeDisplaySettings( &devMode, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL)
     {
         err() << "Failed to change display mode for fullscreen" << std::endl;
         return;
