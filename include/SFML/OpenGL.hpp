@@ -43,7 +43,8 @@
         #include <windows.h>
     #endif
 
-    #include <GL/gl.h>
+    #include <GL/GL.h>
+    #include <GL/GLU.h>
 
 #elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
 
@@ -52,6 +53,7 @@
         #include <GLES/glext.h>
     #else
         #include <GL/gl.h>
+        #include <GL/glu.h>
     #endif
 
 #elif defined(SFML_SYSTEM_MACOS)
@@ -67,7 +69,7 @@
 
     #include <GLES/gl.h>
     #include <GLES/glext.h>
-    
+
     // We're not using OpenGL ES 2+ yet, but we can use the sRGB extension
     #include <GLES2/gl2platform.h>
     #include <GLES2/gl2ext.h>
